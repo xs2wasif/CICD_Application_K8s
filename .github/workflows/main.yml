@@ -66,8 +66,8 @@ jobs:
           token: ${{ secrets.GIT_PASSWORD }}
       - name: modify the image
         run: |
-          git config user.email xs2wasifali@gmail.com
-          git config user.name Wasif
+          git config --global user.email "xs2wasifali@gmail.com"
+          git config --global user.name xs2wasif
           pwd
           cat deployment.yaml
           pwd
