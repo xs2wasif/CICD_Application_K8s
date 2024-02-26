@@ -66,7 +66,6 @@ jobs:
           token: ${{ secrets.GIT_PASSWORD }}
       - name: modify the image
         run: |
-          echo "$GITHUB_CONTEXT"
           git config --global user.email "xs2wasifali@gmail.com"
           git config --global user.name xs2wasif
           pwd
@@ -78,6 +77,6 @@ jobs:
           git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
           git push origin main
         env:
-          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_USERNAME: ${{ github.actor }}
           GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
           RUN_NUMBER: ${{ github.run_number }}
