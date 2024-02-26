@@ -9,7 +9,8 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.10
@@ -29,7 +30,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
   docker:
         needs: build
-        runs-on: ubuntu-latest
+        # runs-on: ubuntu-latest
+        runs-on: self-hosted
         steps:
           -
             name: Checkout
