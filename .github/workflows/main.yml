@@ -79,12 +79,12 @@ jobs:
           pwd
           cat deployment.yaml
           pwd
-          sed -i "s+xs2wasifali/images.*+xs2wasifali/images:app-$RUN_NUMBER+g" deployment.yaml
+          sed -i "s+xs2wasifali/images.*+xs2wasifali/images:app-$GITHUB_SHA+g" deployment.yaml
           cat deployment.yaml
           git add .
-          git commit -m 'Done  by Github Actions   Job changemanifest: ${{ github.run_number }}'
+          git commit -m 'Done  by Github Actions   Job changemanifest: $GITHUB_SHA'
           git push origin main
         env:
           GIT_USERNAME: ${{ github.actor }}
           GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
-          RUN_NUMBER: ${{ github.run_number }}
+          GITHUB_SHA: ${{ github.sha }}
