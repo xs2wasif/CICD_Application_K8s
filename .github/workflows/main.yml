@@ -79,7 +79,7 @@ jobs:
           pwd
           cat deployment.yaml
           pwd
-          sed -i "s+xs2wasifali/images.*+xs2wasifali/images:app-$GITHUB_SHA+g" deployment.yaml
+          sed -i "s+xs2wasifali/images.*+xs2wasifali/images:$GITHUB_SHA+g" deployment.yaml
           cat deployment.yaml
           git add .
           git commit -m 'Done  by Github Actions   Job changemanifest: $GITHUB_SHA'
