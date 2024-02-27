@@ -79,7 +79,7 @@ jobs:
           pwd
           cat deployment.yaml
           pwd
-          sed -i "wa-dev-repository-registry-vpc.me-central-1.cr.aliyuncs.com/km-management/k8s-test:$GITHUB_SHA+g" deployment.yaml
+          sed -i "s+xs2wasifali/images.*+wa-dev-repository-registry-vpc.me-central-1.cr.aliyuncs.com/km-management/k8s-test:$GITHUB_SHA+g" deployment.yaml
           cat deployment.yaml
           git add .
           git commit -m 'Done  by Github Actions   Job changemanifest: $GITHUB_SHA'
